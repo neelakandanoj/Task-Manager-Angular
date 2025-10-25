@@ -1,0 +1,194 @@
+<div class="row text-center">
+    <div class="col -12 m-2">
+        <h2>Directives</h2>
+    </div>
+</div>
+
+<div class="row text-center">
+    <h5>Structural Directives *ngIf</h5>
+    <div class="col-4">
+        <div >
+        <input type="checkbox" name="" id="" [value]="1"(click)="onClick()"> Teams and conditions
+        </div>
+        <!-- <div *ngIf="ischecked">
+        <button class="btn btn-success">Submit</button>
+        </div> -->
+        @if(ischecked){
+            <button class="btn btn-success">Submit</button>
+        }
+    </div>
+
+    <div class="col-4">
+        <!-- <div>
+            <input type="text" name="" id="" *ngIf="isinput">
+        </div> -->
+        @if(isinput){
+            <div>
+            <input type="text" name="" id="" >
+            </div>
+        }
+        <button class="btn btn-primary m-2" (click)="isShow()">Show</button>
+        <button class="btn btn-danger m-2" (click)="isHide()">Hide</button>
+
+    </div>
+
+    <div class="col-4">
+        <div>
+            <input type="text" name="" id="" [(ngModel)]="input1"><br>
+            <input type="text" [(ngModel)]="input2">
+        </div>
+        <!-- <div>
+        <H4 *ngIf="input1 == input2">Both are Equal.</H4>
+        </div>
+        <div>
+        <h4 *ngIf="input1 !== input2">Both are not equal</h4>
+        </div> -->
+        @if(input1 == input2){
+            <div>
+               <H4>Both are Equal.</H4>
+            </div>
+        }@else if(input1 != input2){
+            <div>
+               <H4>Both are NOt Equal.</H4>
+            </div>
+        }
+    </div>
+
+    
+    <hr>
+    <div class="row text-center">
+            <h5>Structural Directives *ngFor </h5>
+
+            <div class="col-4">
+                <select name="" id="" class="pl-2">
+                <!-- <option [value]="emp.empmail" *ngFor="let emp of employee">
+                    {{emp.empmail}}
+                </option> -->
+                @for(emp of employee; track emp){
+                    <option value="">
+                        {{emp.empmail}}
+                    </option>
+                }
+                </select>  
+            </div>
+
+            <div class="col-5">
+                <table class="table" style="border: 1px;">
+                    <thead>
+                        <tr>
+                            <th>EmpName</th>
+                            <th>EmpNumber</th> 
+                            <th>EmpEMail</th>
+                            <th>Department</th>
+                        </tr>
+                       
+                    </thead>
+                    <tbody>
+                        <!-- <tr *ngFor="let emp of employee">
+                            <td>{{emp.name}}</td>
+                            <td>{{emp.empnum}}</td>
+                            <td>{{emp.empmail}}</td>
+                            <td>{{emp.dept}}</td>
+                        </tr> -->
+                        @for(emp of employee; track emp){
+                            <tr>
+                                <td>{{emp.name}}</td>
+                                <td>{{emp.empnum}}</td>
+                                <td>{{emp.empmail}}</td>
+                                <td>{{emp.dept}}</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="col-2">
+                <ul>
+                    @for(com of companyList; track com;let f=$first,l=$last,e=$even,o=$odd,c=$count,i=$index)
+                    {
+                         @if(i==3){
+                            <li style="color: red;">{{com}}   {{e}}</li>
+                        }
+                        @else if(f==true){
+                            <li style="color:green"><b>{{com}}</b></li>
+                        }
+                        @else if(l==true){
+                            <li style="color:blue">{{com}}</li>
+                        }@else if(e){
+                            <li style="color: purple">{{com}}</li>
+                        }
+                       
+                        @else {
+                        <li>{{com}}</li>
+                        } 
+                    }
+                    @empty {
+                            No Company's found
+                        }
+                    
+                </ul>
+            </div>
+            
+    </div>
+       
+
+    <hr>
+    <div class="row text -center">
+                <h4>Structural Directives *ngSwitch</h4>
+
+        <div class="col-4">
+            <button class="btn btn-primary m-2" (click)="set(1)">Grade 1</button>
+            <button class="btn btn-success m-2 " (click)="set(2)">Grade 2</button>
+            <button class="btn btn-danger" (click)="set(3)">Grade 3</button>
+        
+            <div [ngSwitch]="grade">
+                <div *ngSwitchCase="1">Congratulation you are Grade 1.</div>
+                <div *ngSwitchCase="2">Congratulation you are Grade 2.</div>
+                <div *ngSwitchCase="3">Congratulation you are Grade 3.</div>
+                <div *ngSwitchDefault="">No Grade for You..</div>
+            </div>
+        </div>
+            
+        
+        <div class="col-4">
+             <button class="btn btn-primary m-2" (click)="set(1)">Grade 1</button>
+            <button class="btn btn-success m-2 " (click)="set(2)">Grade 2</button>
+            <button class="btn btn-danger" (click)="set(3)">Grade 3</button>
+
+            <div>
+                @switch (grade) {
+                    @case (1) {Congratulations on your achievement grade 1.}
+                    @case (2) {Congratulations on your achievement grade 2.}
+                    @case (3) {Congratulations on your achievement grade 3.}
+                    @default { No Records Found... }
+                }
+            </div>
+        </div>
+        </div>
+
+         <hr>
+    <div class="row text-center">
+            <h2>Attribute Directives ngClass</h2>
+        <div class="col-4 m-1">
+            <h3 [ngClass]="textcolor">This is the first example of ngClass</h3>
+            <br>
+            <button class="btn btn-success m-2" (click)="changecolor('text-success')">Change to green</button>
+            <button class="btn btn-danger m-2" (click)="changecolor('text-danger')">Change to red</button>
+            <button class="btn btn-primary m-2" (click)="changecolor('text-primary')">Change to blue</button>
+        </div>
+    </div>
+
+    <hr>
+    <div class="row text-center">
+        <h2 [ngStyle]="{color:'red'}">Example of Attribute Directives ngStyle</h2>
+        <h2 [ngStyle]="{color:'green',border:'solid', visibility:'Hidden'}">new</h2>
+        <h2 [ngStyle]="{color:'blue',border:'solid'}">new</h2>
+    </div>
+</div>
+
+    
+
+
+
+
+

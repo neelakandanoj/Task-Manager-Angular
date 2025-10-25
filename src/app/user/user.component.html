@@ -1,0 +1,33 @@
+<div class="container d-flex justify-content-center mt-5" style="height: 100%;">
+  <div class="w-50 p-5 border border-secondary text-center ">
+    <h2>Welcome to Login</h2><br>
+
+    <label for="username">Username:</label> &nbsp;
+    <input 
+      id="username"
+      type="text"
+      placeholder="Enter your username"
+      required
+      [(ngModel)]="username"
+      (input)="checkValid()"
+    ><br><br>
+
+    <label for="password">Password:</label> &nbsp;
+    <input 
+      id="password"
+      type="password"
+      placeholder="Enter your password"
+      required
+      [(ngModel)]="password"
+      (input)="checkValid()"
+    ><br><br>
+
+    <button 
+      class="btn btn-primary"
+      [disabled]="!valid"
+      (click)="LoginData(username, password)"
+      >
+      Login
+    </button>
+  </div>
+</div>
