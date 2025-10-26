@@ -1,0 +1,37 @@
+<div class="text-center m-3">
+    <h3 class="text-center m-3">Built-in-Pipes</h3>
+    <h3>1. UpperCasePipe: {{angularPipes | uppercase}}</h3>
+    <h3>2. LowerCasePipe: {{angularPipes | lowercase}}</h3>
+    <h3>3. CamelCasePipe: {{angularPipes | titlecase}}</h3>
+    <h3>4. SlicePipe(4,8): {{angularPipes | slice :4:8}}</h3>
+     <h3>4. SlicePipe(4]): {{angularPipes | slice :4}}</h3>
+      <h3>4. SlicePipe(4,-10): {{angularPipes | slice :4:-10}}</h3>
+       <h3>4. SlicePipe(-10): {{angularPipes | slice :-10}}</h3>
+       <h3>4. SlicePipe: {{[1,2,3,4,5,6,7,8,9] | slice: 1:4}}</h3>
+       <h3>5. JsonPipe: {{personData | json}}</h3>
+       <pre>5. JsonPipe: {{personData |json}}</pre>
+
+       <h3>6.DatePipe: {{currentDate | date}}</h3>
+       <h3>6.DatePipe: {{currentDate | date : 'dd/mm/yyyy'}}</h3>
+       <h3>6.DatePipe: {{currentDate | date : 'mm/dd/yyyy'}}</h3>
+        <h3>6.DatePipe: {{currentDate | date : 'dd-mm-yyy'}}</h3>
+
+
+        <h3>7.DecimalPipe: {{1233.123444 | number:'1.2'}}</h3>
+        <h3>7.DecimalPipe: {{1.123444 | number:'2.5'}}</h3>
+
+        <h3>8.PercentPipe:  {{0.25 |percent}}</h3>
+        <h3>9.CurrencyPipe: {{789 |currency:'INR'}}</h3>
+        <h3>9.CurrencyPipe: {{789 |currency:'EUR'}}</h3>
+
+        <!-- <h3>10.AsyncPipe: 
+            <ul>
+                @for(i of item | async; track i){
+                    <li>{{i}}</li>
+                }
+            </ul>
+        </h3> -->
+
+        <h3>10. Chaining Pipes {{currentDate |date|uppercase}}</h3>
+        
+</div> 

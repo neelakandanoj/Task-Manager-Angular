@@ -5,6 +5,7 @@ import { DirectivesComponent } from './directives/directives.component';
 import { DataBindingComponent } from './data-binding/data-binding.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { LifeCycleHooksComponent } from './life-cycle-hooks/life-cycle-hooks.component';
+import { PipesComponent } from './pipes/pipes.component';
 
 const routes: Routes = [
   {path:"",component:UserComponent},
@@ -13,6 +14,7 @@ const routes: Routes = [
   {path:"Directives/2",component:DirectivesComponent},
   {path:"data-binding/new",component:DataBindingComponent},
   {path:"life-cycle",component:LifeCycleHooksComponent},
+  {path:"pipes",component:PipesComponent},
   {path:"**",component:PageNotFoundComponent}
 ];
 
