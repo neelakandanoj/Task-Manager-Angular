@@ -12,6 +12,7 @@ import { DirectivesComponent } from './directives/directives.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { LifeCycleHooksComponent } from './life-cycle-hooks/life-cycle-hooks.component';
 import { PipesComponent } from './pipes/pipes.component';
+import { TemplateDrivenFormComponent } from './template-driven-form/template-driven-form.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { PipesComponent } from './pipes/pipes.component';
     DirectivesComponent,
     PageNotFoundComponent,
     LifeCycleHooksComponent,
-    PipesComponent
+    PipesComponent,
+    TemplateDrivenFormComponent
     
   ],
   imports: [
