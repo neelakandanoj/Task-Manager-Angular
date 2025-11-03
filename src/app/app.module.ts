@@ -13,6 +13,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { LifeCycleHooksComponent } from './life-cycle-hooks/life-cycle-hooks.component';
 import { PipesComponent } from './pipes/pipes.component';
 import { TemplateDrivenFormComponent } from './template-driven-form/template-driven-form.component';
+import { TempateDrivenFormsComponent } from './tempate-driven-forms/tempate-driven-forms.component';
+import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { TemplateDrivenFormComponent } from './template-driven-form/template-dri
     PageNotFoundComponent,
     LifeCycleHooksComponent,
     PipesComponent,
-    TemplateDrivenFormComponent
+    TemplateDrivenFormComponent,
+    TempateDrivenFormsComponent,
+    ReactiveFormsComponent
     
   ],
   imports: [
