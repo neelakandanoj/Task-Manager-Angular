@@ -6,6 +6,8 @@ import { DataBindingComponent } from './data-binding/data-binding.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { LifeCycleHooksComponent } from './life-cycle-hooks/life-cycle-hooks.component';
 import { PipesComponent } from './pipes/pipes.component';
+import { TempateDrivenFormsComponent } from './tempate-driven-forms/tempate-driven-forms.component';
+import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.component';
 
 const routes: Routes = [
   {path:"",component:UserComponent},
@@ -15,6 +17,8 @@ const routes: Routes = [
   {path:"data-binding/new",component:DataBindingComponent},
   {path:"life-cycle",component:LifeCycleHooksComponent},
   {path:"pipes",component:PipesComponent},
+  {path:"TDF",component:TempateDrivenFormsComponent},
+  {path:"RF",component:ReactiveFormsComponent},
   {path:"**",component:PageNotFoundComponent}
 ];
 
